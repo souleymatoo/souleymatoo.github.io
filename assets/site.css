@@ -1,0 +1,470 @@
+/* Typography and layout of the CV itself.
+   Single column on purpose: multi-column CVs confuse the parsers recruiters
+   use to pre-screen applications.
+
+   Every colour goes through a variable so the website can re-theme the exact
+   same markup (dark mode) without overriding rules one by one.
+
+   Spacing and skill chips live here so the PDF matches the GitHub Pages look —
+   site.css only scales type for the screen. Tuned to stay within two pages. */
+
+:root {
+  --accent: #1f4e79;
+  --ink: #1a1d21;
+  --ink-strong: #14181d;
+  --ink-body: #383e46;
+  --ink-soft: #4a5058;
+  --ink-muted: #5c626a;
+  --ink-faint: #a8aeb6;
+  --rule: #d7dbe0;
+  --chip-bg: #e8edf3;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body.print {
+  margin: 0;
+  background: #fff;
+}
+
+.cv {
+  font-family: Inter, "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+  font-size: 9.4pt;
+  line-height: 1.46;
+  color: var(--ink);
+  max-width: 100%;
+}
+
+.cv a { color: inherit; text-decoration: none; }
+.cv p { margin: 0 0 5pt; }
+.cv ul { margin: 0; padding: 0; list-style: none; }
+
+/* ---------- Header ---------- */
+
+.cv-header {
+  border-bottom: 1.7pt solid var(--accent);
+  padding-bottom: 8pt;
+  margin-bottom: 12pt;
+}
+
+.cv-name {
+  margin: 0;
+  font-size: 19.5pt;
+  font-weight: 700;
+  letter-spacing: -0.4pt;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.cv-headline {
+  margin: 2.5pt 0 7pt;
+  font-size: 10.2pt;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 8.6pt;
+  color: var(--ink-soft);
+  row-gap: 1.5pt;
+}
+
+.cv-contact li + li::before {
+  content: "·";
+  margin: 0 5pt;
+  color: var(--ink-faint);
+}
+
+.cv-contact a { color: var(--ink-soft); }
+
+/* ---------- Sections ---------- */
+
+.cv-section { margin-bottom: 12pt; }
+
+.cv-section h2 {
+  margin: 0 0 7pt;
+  padding-bottom: 3pt;
+  border-bottom: 0.7pt solid var(--rule);
+  font-size: 9.2pt;
+  font-weight: 700;
+  letter-spacing: 0.9pt;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cv-section--summary p {
+  font-size: 9.55pt;
+  line-height: 1.48;
+  color: var(--ink);
+  margin-bottom: 0;
+}
+
+/* ---------- Experience entries ---------- */
+
+.entry {
+  margin-bottom: 10.5pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.entry:last-child { margin-bottom: 0; }
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8pt;
+  margin-bottom: 2.5pt;
+}
+
+.entry-title {
+  margin: 0;
+  font-size: 9.9pt;
+  font-weight: 600;
+  color: var(--ink-strong);
+}
+
+.entry-org { font-weight: 600; color: var(--accent); }
+.entry-sep { color: var(--ink-faint); font-weight: 400; }
+
+.entry-meta {
+  margin: 0;
+  font-size: 8.4pt;
+  font-weight: 500;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-note {
+  margin: 1.5pt 0 3.5pt;
+  color: var(--ink-body);
+}
+
+.entry-note--lead {
+  margin-top: 5.5pt;
+  margin-bottom: 2.5pt;
+  color: var(--ink-strong);
+}
+
+.entry-note--lead strong { font-weight: 600; }
+
+/* ---------- Bullets ---------- */
+
+.bullets {
+  margin: 1.5pt 0 3pt;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 10pt;
+  margin-bottom: 2.8pt;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 1.5pt;
+  top: 4.8pt;
+  width: 2.5pt;
+  height: 2.5pt;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.bullets .nested { margin-top: 2pt; }
+.bullets .nested li::before { background: var(--ink-faint); }
+
+/* ---------- Skill groups and tag chips ---------- */
+
+.groups { margin: 0.5pt 0 0; }
+
+.group {
+  display: flex;
+  gap: 7pt;
+  margin-bottom: 4pt;
+  align-items: flex-start;
+  break-inside: avoid;
+}
+
+.group:last-child { margin-bottom: 0; }
+
+.group dt {
+  flex: 0 0 23%;
+  padding-top: 1.2pt;
+  font-weight: 600;
+  color: var(--ink-strong);
+}
+
+.group dd {
+  margin: 0;
+  flex: 1;
+  color: var(--ink-body);
+  line-height: 1.5;
+}
+
+/* Separators are only for the plain-text export; chips replace them visually. */
+.tag-sep { display: none; }
+
+.tag {
+  display: inline-block;
+  background: var(--chip-bg);
+  border-radius: 2.5pt;
+  padding: 1pt 4.5pt;
+  margin: 0 2.5pt 2.5pt 0;
+  font-size: 7.9pt;
+  line-height: 1.3;
+  color: var(--ink);
+  vertical-align: baseline;
+}
+
+.stack {
+  margin: 4.5pt 0 0;
+  font-size: 8.3pt;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.stack-label {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-right: 2pt;
+  margin-bottom: 2.5pt;
+}
+
+code {
+  font-family: "JetBrains Mono", "Liberation Mono", monospace;
+  font-size: 0.92em;
+}
+
+/* Education / certifications / languages sit lower on the page: keep them
+   a touch denser so the breathing room goes to the experience section. */
+.cv-section--education,
+.cv-section--certifications,
+.cv-section--languages {
+  margin-bottom: 10pt;
+}
+
+.cv-section--education .bullets li,
+.cv-section--certifications .bullets li {
+  margin-bottom: 2.2pt;
+}
+
+.cv-section--languages .group {
+  margin-bottom: 3pt;
+}
+
+
+/* Web presentation layer for the GitHub Pages site.
+   It reuses the print stylesheet (spacing, chips, colours) and only adjusts
+   what a screen needs: fluid sizing, dark mode and a sticky action bar. */
+
+:root {
+  --page-bg: #eef1f5;
+  --card-bg: #ffffff;
+  --text: #1a1d21;
+  --text-soft: #4a5058;
+  --line: #d7dbe0;
+  --bar-bg: rgba(255, 255, 255, 0.86);
+  --chip-bg: #eef2f7;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 12px 32px rgba(16, 24, 40, 0.09);
+}
+
+html[data-theme="dark"] {
+  --page-bg: #0e1116;
+  --card-bg: #161b22;
+  --text: #e4e8ee;
+  --text-soft: #9aa3ae;
+  --line: #2b323c;
+  --bar-bg: rgba(22, 27, 34, 0.86);
+  --chip-bg: #222a34;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* Re-tint the print stylesheet rather than overriding each of its rules. */
+  --accent: #6ea8fe;
+  --ink: #e4e8ee;
+  --ink-strong: #f2f5f9;
+  --ink-body: #cdd4dd;
+  --ink-soft: #aab2bd;
+  --ink-muted: #98a1ac;
+  --ink-faint: #5b636e;
+  --rule: #2b323c;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: Inter, "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--card-bg);
+  color: var(--text);
+  padding: 10px 16px;
+  z-index: 20;
+}
+
+.skip-link:focus { left: 8px; top: 8px; }
+
+/* ---------- Action bar ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bar-bg);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topbar-name {
+  font-weight: 650;
+  font-size: 15px;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1;
+  padding: 8px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-soft);
+}
+
+.btn-ghost:hover {
+  background: var(--chip-bg);
+  color: var(--text);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover { filter: brightness(1.08); }
+
+/* ---------- Page and card ---------- */
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 20px 56px;
+}
+
+.page .cv {
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 44px 48px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.page-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-soft);
+}
+
+.page-footer p { margin: 0; }
+
+/* ---------- Screen overrides of the print stylesheet ---------- */
+
+.page .cv-name { font-size: 32px; letter-spacing: -0.8px; }
+.page .cv-headline { font-size: 17px; margin: 4px 0 12px; }
+.page .cv-contact { font-size: 13.5px; gap: 0; color: var(--text-soft); }
+.page .cv-contact a { color: var(--accent); text-decoration: none; }
+.page .cv-contact a:hover { text-decoration: underline; }
+.page .cv-header { padding-bottom: 14px; margin-bottom: 24px; border-bottom-width: 3px; }
+
+.page .cv-section { margin-bottom: 26px; }
+.page .cv-section h2 { font-size: 12.5px; margin-bottom: 12px; padding-bottom: 5px; border-color: var(--line); }
+.page .cv-section--summary p { font-size: 15.5px; color: var(--text); }
+
+.page .entry { margin-bottom: 22px; }
+.page .entry-head { flex-wrap: wrap; }
+.page .entry-title { font-size: 16px; color: var(--text); }
+.page .entry-meta { font-size: 13px; color: var(--text-soft); }
+.page .entry-note { margin: 4px 0 8px; color: var(--text-soft); }
+
+.page .bullets li { padding-left: 17px; margin-bottom: 6px; }
+.page .bullets li::before { top: 9px; width: 5px; height: 5px; left: 2px; }
+
+.page .group { margin-bottom: 10px; flex-wrap: wrap; gap: 10px; }
+.page .group dt { flex-basis: 150px; padding-top: 4px; }
+.page .group dd { flex: 1; min-width: 220px; }
+
+.page .tag {
+  font-size: 13px;
+  border-radius: 6px;
+  padding: 3px 9px;
+  margin: 0 5px 5px 0;
+}
+
+.page .stack { font-size: 13px; margin-top: 10px; color: var(--text-soft); }
+.page .stack-label { color: var(--text-soft); margin-bottom: 5px; }
+
+@media (max-width: 640px) {
+  .page { padding: 16px 12px 40px; }
+  .page .cv { padding: 26px 20px; border-radius: 10px; font-size: 14.5px; }
+  .page .cv-name { font-size: 26px; }
+  .topbar-inner { padding: 8px 12px; }
+  .topbar-name { display: none; }
+  .topbar-actions { width: 100%; flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .btn { padding: 8px 10px; font-size: 12.5px; }
+  .page .entry-meta { width: 100%; }
+}
+
+@media print {
+  .topbar, .page-footer, .skip-link { display: none; }
+  .page { padding: 0; max-width: none; }
+  .page .cv { box-shadow: none; border-radius: 0; padding: 0; }
+}
+

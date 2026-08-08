@@ -1,0 +1,86 @@
+Souleymane Harouna Mato
+Java / Spring Developer — Lead Dev · Agentic AI
+Longueuil, QC (Canada) | +1 514 209-0509 | souleymato@gmail.com | linkedin.com/souleymatoo | github.com/souleymatoo | souleymatoo.github.io
+
+PROFILE
+-------
+Lead Java/Spring developer with 10+ years building systems end to end, from design to production. Designs secure APIs and microservices, CQRS and event-driven architectures for banking (Banque Nationale, Desjardins) and international projects (Atos, People Input). Comfortable wearing both the developer and the ops hat on AWS and Azure; currently helping build an agentic platform (agents, skills, orchestration).
+
+TECHNICAL SKILLS
+----------------
+Languages: Java, TypeScript, SQL, Python
+Backend: Spring Boot, Spring Cloud, Spring Batch, Spring Security, Spring MVC, Genesis Framework, Flask, Django
+Architecture: Microservices, CQRS, Event-Driven Design, REST APIs, Thymeleaf
+AI: Agents, Prompt engineering, Skills, Orchestration, GitHub Copilot
+Cloud & containers: AWS, Microsoft Azure, Kubernetes, Docker, OpenShift, Rancher, Linux
+Data & messaging: Kafka, RabbitMQ, PostgreSQL, DynamoDB, Redis
+Quality & security: JUnit, TestNG, Cucumber, Snyk, DevSecOps, Keycloak
+Practices: Trunk-based development, CI/CD, GitHub Actions, Scrum
+Front-end: Angular, EmberJS
+- Languages : Java, TypeScript, SQL, Python
+- Backend : Spring Boot, Spring Cloud, Spring Batch, Spring Security, Spring MVC, Genesis Framework, Flask, Django
+- Architecture : Microservices, CQRS, Event-Driven Design, REST APIs, Thymeleaf
+- AI : Agents, Prompt engineering, Skills, Orchestration, GitHub Copilot
+- Cloud & containers : AWS, Microsoft Azure, Kubernetes, Docker, OpenShift, Rancher, Linux
+- Data & messaging : Kafka, RabbitMQ, PostgreSQL, DynamoDB, Redis
+- Quality & security : JUnit, TestNG, Cucumber, Snyk, DevSecOps, Keycloak
+- Practices : Trunk-based development, CI/CD, GitHub Actions, Scrum
+- Front-end : Angular, EmberJS
+
+PROFESSIONAL EXPERIENCE
+-----------------------
+
+Java Developer & Lead Dev - Banque Nationale du Canada
+10/2021 – present | Montreal, QC
+Agentic platform — technical AI agent foundation (architecture, design, development, QA and infra).
+Cards API domain — end-to-end management of the debit and credit card lifecycle.
+- Designs and builds, within a multidisciplinary team, a shared agentic platform.
+- Delivers the agent, skills and orchestration building blocks that industrialise AI usage.
+- Develops and maintains the APIs driving the debit and credit card lifecycle, at the core of the bank's payment platform.
+- Secures the APIs and their deployment environments (Snyk, DevSecOps practices).
+- Drives the testing strategy and trunk-based development that shortened the delivery cycle.
+Environment: Java, Spring, microservices, AWS, Kubernetes, Docker, Kafka, DynamoDB, Redis, AI agents, Skills, Orchestration, Snyk, GitHub Actions, GitHub Copilot
+
+Java Developer - Desjardins
+12/2019 – 10/2021 | Quebec City, QC
+Next programme — insurance platform redesign: unifying the group's separate insurance systems into one, to simplify quoting and policy subscription.
+- Built the services of the new insurance platform on a CQRS architecture.
+- Cut the solution's start-up time by applying optimisations drawn from previous projects.
+- Covered the codebase with automated tests (JUnit, TestNG) wired into the team's Git workflow.
+Environment: Java, Spring, Genesis Framework, CQRS, Azure, Kubernetes, Docker, JUnit, TestNG
+
+Java Developer - Atos
+06/2018 – 08/2019 | Dakar, Senegal
+Cykléo — bike sharing tracking and rental platform (01/2019 – 08/2019)
+Cigarette pack traceability platform (06/2018 – 01/2019) — compliance with EU directive 2014/40/EU.
+- Developed and maintained the web application running in more than 5 major French cities for over 10 million active users.
+- Doubled as ops on the same project: diagnosed and fixed incidents across the QA, staging and production environments.
+- Joined the architecture team and drove the choice of an event-driven microservices architecture, based on prior cloud experience.
+- Delivered the proof of concept, then set up the QA, staging and production environments.
+Environment: Java, Spring (MVC, Batch, Security, Cloud), EmberJS, Angular, RabbitMQ, OpenShift, Keycloak, Cucumber, JUnit
+
+Java Developer - People Input
+09/2015 – 05/2018 | Dakar, Senegal
+- Digitalised LafargeHolcim Ivory Coast's sales system: a multi-source web app for orders and stock tracking.
+- Built the single subscription-management platform for People Input and its partners.
+- Delivered the brokerage app for stock orders, UCITS and bonds (Financial Capital); tests, documentation and support across all three projects.
+Environment: Java, Spring (MVC, Batch, Security, Cloud, Thymeleaf), Python, Flask, Django, Angular, RabbitMQ, PostgreSQL, Docker, Rancher, JUnit
+
+EDUCATION
+---------
+- MSc — Data Transmission and Information Security, Université Cheikh Anta Diop, Senegal · 2017
+- Engineering degree in Telecom & Computer Engineering, École Supérieure Multinationale des Télécommunications, Senegal · 2013
+- Advanced technician diploma in Telecom & Computer Engineering, École Supérieure Multinationale des Télécommunications, Senegal · 2011
+
+CERTIFICATIONS
+--------------
+- AWS Certified Developer – Associate · 2025
+- LPIC-2 — Linux Professional Institute · 2014
+- LPIC-1 — Linux Professional Institute · 2013
+
+LANGUAGES
+---------
+French: fluent
+English: professional working proficiency
+- French : fluent
+- English : professional working proficiency
